@@ -1,0 +1,74 @@
+/* Dark-themed modern portfolio - style.css */
+
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0f14; --card:#0f1720; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.04);
+  --max-width:1100px;
+}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.06), transparent),
+              linear-gradient(180deg, var(--bg), #03060a);
+  color:#e6eef6; -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+
+/* Nav */
+.nav{position:fixed;left:0;right:0;top:12px;z-index:50;padding:0 20px}
+.nav-container{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;background:transparent;padding:6px 12px;border-radius:12px}
+.brand{font-weight:700;color:var(--accent)}
+.nav-links a{color:var(--muted);margin-left:18px;text-decoration:none;font-size:15px}
+.nav-links a:hover{color:#fff}
+
+/* Hero */
+.hero{min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
+.hero-inner{max-width:900px}
+.hero-photo{width:120px;height:120px;border-radius:50%;border:3px solid rgba(255,255,255,0.06);background:linear-gradient(135deg,#0ea5a4,#06b6d4);padding:6px;display:inline-block;margin-bottom:18px;object-fit:cover}
+.hero-title{font-size:34px;margin-bottom:8px}
+.hero-title span{color:var(--accent)}
+.hero-sub{color:var(--muted);margin-bottom:18px}
+.btn{background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#021017;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-right:8px;display:inline-block;box-shadow:0 8px 30px rgba(3,7,18,0.6)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+/* Sections */
+.section{padding:60px 20px}
+.container{max-width:var(--max-width);margin:0 auto}
+
+/* Headings */
+h2{font-size:22px;margin-bottom:18px;color:#fff}
+
+/* Cards */
+.dark-section{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-top:1px solid rgba(255,255,255,0.02)}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.skill{background:var(--card);padding:14px;border-radius:10px;border:1px solid var(--glass)}
+.skill-head{display:flex;justify-content:space-between;margin-bottom:8px;color:var(--muted);font-size:14px}
+.skill-bar{background:rgba(255,255,255,0.03);height:10px;border-radius:999px;overflow:hidden}
+.skill-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#7dd3fc);border-radius:999px;transition:width 1.2s ease}
+
+/* Project grid */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:12px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;transition:transform 0.25s ease, box-shadow 0.25s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(2,6,23,0.6)}
+.card-img{width:100%;height:140px;object-fit:cover;display:block;background:linear-gradient(135deg,#06b6d4,#7dd3fc)}
+.card-content{padding:14px;flex:1;display:flex;flex-direction:column}
+.card-content h3{margin-bottom:8px;color:#fff}
+.card-content p{color:var(--muted);font-size:14px;flex:1}
+.tags{color:var(--muted);font-size:13px;margin-top:10px}
+.card-btn{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.04);color:var(--accent);text-decoration:none;font-weight:600}
+
+/* Footer */
+.footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .8s ease, transform .8s ease}
+.reveal.active{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:720px){
+  .nav-links{display:none}
+  .hero-title{font-size:26px}
+  .hero-photo{width:100px;height:100px}
+}
